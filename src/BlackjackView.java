@@ -164,18 +164,18 @@ public class BlackjackView extends JFrame {
         //dealBtn.setEnabled(false);
 
         standBtn = new JButton("Stand");
-        standBtn.setBounds(200, 630, 100, 30);
+        standBtn.setBounds(200, 630, 120, 40);
         standBtn.setEnabled(false);
 
         hitBtn = new JButton("Hit");
-        hitBtn.setBounds(305, 630, 100, 30);
+        hitBtn.setBounds(305, 630, 120, 40);
         hitBtn.setEnabled(false);
 
         exitBtn = new JButton("Exit");
-        exitBtn.setBounds(250, 730, 100, 30);
+        exitBtn.setBounds(250, 730, 120, 40);
 
         dblDownBtn = new JButton("Double Down");
-        dblDownBtn.setBounds(410,630,120,30);
+        dblDownBtn.setBounds(410,630,120,40);
         dblDownBtn.setEnabled(false);
 
         LoadAssets(); // load card images
