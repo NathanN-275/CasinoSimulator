@@ -1,7 +1,7 @@
-import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.Random;
+import javax.sound.sampled.*;
 
 /**
  * SlotModel class for slot-machine. Should contain all the backend methods/functions.
@@ -54,11 +54,11 @@ public class SlotModel {
         Random randomNumber = new Random();
         if (MainMenuView.difficulty == "Hard") {
             for (int i = 0; i < 9; i++) {
-                slot[i] = randomNumber.nextInt(11);
+                slot[i] = randomNumber.nextInt(20);
             }
         } else if (MainMenuView.difficulty == "Medium") {
             for (int i = 0; i < 9; i++) {
-                int val = randomNumber.nextInt(9);
+                int val = randomNumber.nextInt(11);
                 int val2 = randomNumber.nextInt(8);
                 if (val2 == 7) //Double the chance to get a "7" icon
                     val = 1;
