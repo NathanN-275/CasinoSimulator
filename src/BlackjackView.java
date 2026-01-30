@@ -540,11 +540,28 @@ public class BlackjackView extends JFrame {
 
         // Load background
         try {
-            img = ImageIO.read(new File(path + "/Assets/Blackjack/background.jpg"));
+            BufferedImage img1 = ImageIO.read(new File(path + "/Assets/Blackjack/background.jpg"));
+        
+            // Zoom factor: 1.2 = 120%
+            double zoomFactor = 3.2;
+            int zoomWidth = (int)(img1.getWidth() * zoomFactor);
+            int zoomHeight = (int)(img1.getHeight() * zoomFactor);
+        
+            // Scale and crop 
+            BufferedImage output = new BufferedImage(600, 800, BufferedImage.TYPE_INT_ARGB);
+            Graphics2D g = output.createGraphics();
+        
+            // Draw the zoomed image centered
+            g.drawImage(img1, (600 - zoomWidth)/2, (800 - zoomHeight)/2, zoomWidth, zoomHeight, null);
+            g.dispose();
+        
+            // Set as JLabel
+            background = new JLabel(new ImageIcon(output));
+            background.setBounds(0, 0, 600, 800);
+        
+        } catch (Exception e) {
+            System.out.println("Cannot load background image!");
         }
-        catch (Exception e) { System.out.println("Cannot load background image!"); }
-        background = new JLabel(new ImageIcon(img));
-        background.setBounds(0, 0, 600, 800);
 
         // Load chips
         int index = 5;
