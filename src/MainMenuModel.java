@@ -33,7 +33,7 @@ public class MainMenuModel {
             myReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("No save data.");
-            money = 100;
+            money = 200; // default starting money if no save data
         }
         menuView = new MainMenuView(this);
     }
@@ -62,9 +62,9 @@ public class MainMenuModel {
     public static int getMoney(){return money;}
 
     /**
-     * adds $100 to players balance
+     * adds $x to players balance
      */
-    public static void addMoney(){money = 100;}
+    public static void addMoney(){money = 200;} // function to change monet
 
     /**
      * Saves the data and exits the program
