@@ -297,7 +297,7 @@ public class SlotModel {
      */
     public void playHandleSound() throws LineUnavailableException, UnsupportedAudioFileException, IOException {
         String path = System.getProperty("user.dir");
-        File audioFile = new File(path + "/Sounds/HandleSound.wav").getAbsoluteFile();
+        File audioFile = new File(path + "/Sounds/Letsgogambling.wav").getAbsoluteFile();
         AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(audioFile);
         Clip clip = AudioSystem.getClip();
         clip.open(audioInputStream);
